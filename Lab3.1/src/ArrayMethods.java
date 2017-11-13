@@ -1,5 +1,5 @@
-import java.util.Arrays;
-public class ArrayMethods {
+
+public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
 		int[] random = {1,2,3,4,1,5,5};
@@ -9,23 +9,33 @@ public class ArrayMethods {
 	
 	public static void removeDuplicates(int [] list)
 	{
-		int duplicateCount = 0;
-		for(int i = 0; i < list.length-1; i++)
+		int[]mask = new int[list.length];
+		
+		int length = countUnique(list);	
+		int[]newArr = new int[length];
+		for(int i = 0; i<list.length; i++)
 		{
-			for(int j = i+1; j <list.length; j++)
+			mask[i]=1;
+			for(int j = i+1; j<list.length;j++)
 			{
-				if(list[j]==list[i])
+				if(list[i]==list[j])
 				{
-					duplicateCount++;
-					int index = j;
+					mask[i] = 0;
+					break;
 				}
 			}
 		}
-		duplicateCount = duplicateCount*2;
-		System.out.println(duplicateCount);
-		
-		int[]newArr = new int[list.length - duplicateCount];
-		System.out.println(newArr.length);
+		//printArray(mask);
+		for(int i = 0; i< newArr.length; i++)
+		{
+			for(int j = 0; j<mask.length; j++)
+			{
+				if(mask[j]==1)
+				{
+					newArr[i] = list[j];
+				}
+			}
+		}
 		printArray(newArr);
 	}
 	public static void printArray(int[] myData)

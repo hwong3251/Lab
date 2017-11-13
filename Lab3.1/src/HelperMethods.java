@@ -1,5 +1,5 @@
 
-public class HelperMethods {
+public abstract class HelperMethods {
 	public static int[]copyArray(int[]intArray)
 	{
 		int[]copy = new int[intArray.length];
@@ -17,16 +17,42 @@ public class HelperMethods {
 		}
 		System.out.println();
 	}
-	public static int findDuplicates(int[]arr)
+	public static int Duplicates(int[]arr)
 	{
+		int n = 0;
 		for(int i = 0; i<arr.length-1;i++)
 		{
 			for(int j = i+1; j<arr.length;j++)
 			{
 				if(arr[i]==arr[j])
-					return arr[i];
+					n++;
 			}
 		}
-		return -1;
+		return n;
+	}
+	public static int countUnique(int[]numbers)
+	{
+		int count = 0;
+		for(int i = 0; i < numbers.length; i++)
+		{
+			//Assume the number is unique at first
+			boolean unique= true;
+			
+			//Check all the subsequent numbers
+			for(int j = i+1; j<numbers.length; j++)
+			{
+				if(numbers[i] == numbers[j])
+				{
+					unique = false; //If we found an equivalent number, unique is false
+					break; // No need to check the rest of the inner for-loop
+				}
+			}
+			//If unique stayed true, we add 1 to the unique count
+			if(unique)
+			{
+				count ++;
+			}
+		}
+		return count;
 	}
 }
