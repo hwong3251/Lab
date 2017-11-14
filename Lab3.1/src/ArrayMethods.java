@@ -9,6 +9,9 @@ public class ArrayMethods extends HelperMethods {
 		int[]arr1 = {1,2,4,6,8};
 		int[]arr2 = {1,2,3};
 		productArray(arr1, arr2);
+		System.out.println();
+		
+		pascalTriangle(2);
 	}
 	
 	public static int[] removeDuplicates(int [] list)
@@ -63,4 +66,26 @@ public class ArrayMethods extends HelperMethods {
 		}
 		return newArr;
 	}
+	public static int[][]pascalTriangle(int n)
+	{
+		
+	}
+/**
+	public static void printPascalTriangle(int[][]pTriangle)
+	{
+		int[]row = new int[n];
+		int[]column = new int[n*2-1];
+		int[][]newArr = new int[row.length][column.length];
+		for (int i = 0; i < row.length; i++)
+		{
+			for (int j = 0; j < column.length; j++)
+			{
+				
+				System.out.print("[ ]");
+			}
+			System.out.println();
+		}
+		return newArr;
+	}
+**/
 }
