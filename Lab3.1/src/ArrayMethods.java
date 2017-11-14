@@ -2,13 +2,14 @@
 public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
-		int[] random = {1,2,3,4,1,5,5};
+		int[] random = {1,4,1,2,8,9,8,6,3,4,5,1};
 		removeDuplicates(random);
 		//System.out.println(random.length);
 	}
 	
 	public static void removeDuplicates(int [] list)
 	{
+		printArray(list);
 		int[]mask = new int[list.length];
 		
 		int length = countUnique(list);	
@@ -25,24 +26,17 @@ public class ArrayMethods extends HelperMethods {
 				}
 			}
 		}
-		//printArray(mask);
-		for(int i = 0; i< newArr.length; i++)
+		printArray(mask);
+		int count = 0;
+		for(int i = 0; i< list.length; i++)
 		{
-			for(int j = 0; j<mask.length; j++)
+			if(mask[i]==1)
 			{
-				if(mask[j]==1)
-				{
-					newArr[i] = list[j];
-				}
+				newArr[count] = list[i];
+				count++;
 			}
 		}
 		printArray(newArr);
 	}
-	public static void printArray(int[] myData)
-	{   
-	    for(int i = 0; i < myData.length; i++)
-	    {
-	        System.out.print(myData[i]);
-	    }
-	}
+
 }

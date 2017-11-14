@@ -9,14 +9,6 @@ public abstract class HelperMethods {
 		}
 		return copy;
 	}
-	public static void printArray(int[]arr)
-	{
-		for(int i = 0; i< arr.length; i++)
-		{
-			System.out.print("[" +arr[i]+"]");
-		}
-		System.out.println();
-	}
 	public static int Duplicates(int[]arr)
 	{
 		int n = 0;
@@ -54,5 +46,13 @@ public abstract class HelperMethods {
 			}
 		}
 		return count;
+	}
+	public static void printArray(int[] myData)
+	{   
+	    for(int i = 0; i < myData.length; i++)
+	    {
+	        System.out.print(myData[i]);
+	    }
+	    System.out.print("\n");
 	}
 }
