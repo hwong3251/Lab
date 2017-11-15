@@ -2,16 +2,17 @@
 public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
-		int[] random = {1,4,1};
+		//int[] random = {1,4,1};
 		//int[]newArr = removeDuplicates(random);
-		int[][]pArr = pascalTriangle(3);
+		
+		//int[]arr1 = {1,2,4,6,8};
+		//int[]arr2 = {1,2,3};
+		//productArray(arr1, arr2);
+		//System.out.println();
+		
+		int[][]pArr = pascalTriangle(6);
 		printArray(pArr);
-		
-		int[]arr1 = {1,2,4,6,8};
-		int[]arr2 = {1,2,3};
-		productArray(arr1, arr2);
-		System.out.println();
-		
+		printPascalTriangle(pArr);
 	}
 	
 	public static int[] removeDuplicates(int [] list)
@@ -79,25 +80,25 @@ public class ArrayMethods extends HelperMethods {
 				newArr[i][j] = newArr[i-1][j-1]+newArr[i-1][j];
 			}
 		}
-		
 		return newArr;
 	}
 	public static void printPascalTriangle(int[][]pTriangle)
 	{
-		/**
-		int[]row = new int[n];
-		int[]column = new int[n*2-1];
-		int[][]newArr = new int[row.length][column.length];
-		for (int i = 0; i < row.length; i++)
+		int count = pTriangle.length/5;
+		for (int i = 0; i < pTriangle.length; i++)
 		{
-			for (int j = 0; j < column.length; j++)
+			int x = i;
+			while(x < pTriangle.length-1)
 			{
-				
-				System.out.print("[ ]");
+				System.out.print("x");
+				x++;
+			}
+			for (int j = 0; j < pTriangle[i].length; j++)
+			{
+				System.out.print(pTriangle[i][j]);
+				System.out.print("x");
 			}
 			System.out.println();
 		}
-		return newArr;
-		**/
 	}
 }
