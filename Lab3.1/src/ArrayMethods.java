@@ -3,15 +3,15 @@ public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
 		int[] random = {1,4,1};
-		int[]newArr = removeDuplicates(random);
-		printArray(newArr);
+		//int[]newArr = removeDuplicates(random);
+		int[][]pArr = pascalTriangle(3);
+		printArray(pArr);
 		
 		int[]arr1 = {1,2,4,6,8};
 		int[]arr2 = {1,2,3};
 		productArray(arr1, arr2);
 		System.out.println();
 		
-		pascalTriangle(2);
 	}
 	
 	public static int[] removeDuplicates(int [] list)
@@ -68,11 +68,23 @@ public class ArrayMethods extends HelperMethods {
 	}
 	public static int[][]pascalTriangle(int n)
 	{
+		int[][] newArr = new int[n][];
+		for(int i = 0; i < n; i++)
+		{
+			newArr[i] = new int[i+1];
+			newArr[i][0] = 1;
+			newArr[i][newArr[i].length-1] = 1;
+			for(int j = 1; j < i; j++)  
+			{
+				newArr[i][j] = newArr[i-1][j-1]+newArr[i-1][j];
+			}
+		}
 		
+		return newArr;
 	}
-/**
 	public static void printPascalTriangle(int[][]pTriangle)
 	{
+		/**
 		int[]row = new int[n];
 		int[]column = new int[n*2-1];
 		int[][]newArr = new int[row.length][column.length];
@@ -86,6 +98,6 @@ public class ArrayMethods extends HelperMethods {
 			System.out.println();
 		}
 		return newArr;
+		**/
 	}
-**/
 }
