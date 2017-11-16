@@ -2,17 +2,20 @@
 public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
-		//int[] random = {1,4,1};
-		//int[]newArr = removeDuplicates(random);
+		//remove duplicate
+		int[] random = {1,4,1};
+		int[]newArr = removeDuplicates(random);
 		
-		//int[]arr1 = {1,2,4,6,8};
-		//int[]arr2 = {1,2,3};
-		//productArray(arr1, arr2);
-		//System.out.println();
+		//product array
+		int[]arr1 = {1,2,4,6,8};
+		int[]arr2 = {1,2,3};
+		productArray(arr1, arr2);
+		System.out.println();
 		
+		//pascal
 		int[][]pArr = pascalTriangle(6);
-		printArray(pArr);
 		printPascalTriangle(pArr);
+
 	}
 	
 	public static int[] removeDuplicates(int [] list)
