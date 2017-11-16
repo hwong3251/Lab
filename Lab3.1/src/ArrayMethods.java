@@ -1,23 +1,27 @@
-
+/**
+ * 
+ * @author Leon You, Hoi Lam Wong
+ *
+ */
 public class ArrayMethods extends HelperMethods {
 	public static void main(String[] args)
 	{
-		//int[] random = {1,4,1};
-		//int[]newArr = removeDuplicates(random);
+		int[]random = {1,4,1,5,6};// 4156
+		int[]newArr = removeDuplicates(random);
+		printArray(newArr);
 		
-		//int[]arr1 = {1,2,4,6,8};
-		//int[]arr2 = {1,2,3};
-		//productArray(arr1, arr2);
-		//System.out.println();
+		int[]arr1 = {1,2,4,6,8};
+		int[]arr2 = {1,2,3};
+		productArray(arr1, arr2);
+		System.out.println();
 		
-		int[][]pArr = pascalTriangle(6);
-		printArray(pArr);
+		int[][]pArr = pascalTriangle(8);
 		printPascalTriangle(pArr);
 	}
 	
 	public static int[] removeDuplicates(int [] list)
 	{
-		printArray(list);
+		//printArray(list);
 		int[]mask = new int[list.length];
 		
 		int length = countUnique(list);	
@@ -34,7 +38,7 @@ public class ArrayMethods extends HelperMethods {
 				}
 			}
 		}
-		printArray(mask);
+		//printArray(mask);
 		int count = 0;
 		for(int i = 0; i< list.length; i++)
 		{
@@ -84,19 +88,18 @@ public class ArrayMethods extends HelperMethods {
 	}
 	public static void printPascalTriangle(int[][]pTriangle)
 	{
-		int count = pTriangle.length/5;
 		for (int i = 0; i < pTriangle.length; i++)
 		{
 			int x = i;
 			while(x < pTriangle.length-1)
 			{
-				System.out.print("x");
+				System.out.print("  ");
 				x++;
 			}
 			for (int j = 0; j < pTriangle[i].length; j++)
 			{
-				System.out.print(pTriangle[i][j]);
-				System.out.print("x");
+				System.out.print("["+pTriangle[i][j]+"]");
+				System.out.print(" ");
 			}
 			System.out.println();
 		}
