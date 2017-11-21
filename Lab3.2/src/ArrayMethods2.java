@@ -1,14 +1,16 @@
+import java.util.Arrays;
 
 public class ArrayMethods2 extends HelperMethods{
 	public static void main(String[]args)
 	{
-		String[]L1 = {"a","c"};
-		String[]L2 = {"a","b"};
+		String[]L1 = {"aa","apple","cc","fetch"};
+		String[]L2 = {"bb","bee","dog","frisbee"};
 		String[]test = merge(L1, L2);
 		printArray(test);
-		String apple = "aa";
-		String banana = "ab";
-		System.out.println(apple.compareTo(banana));
+		
+		String[]L = {"a","z","d","b","e","c"};
+		String[]test2 = mergeSort(L);
+		printArray(test2);
 	}
 	public static String[]merge(String[]list1, String[]list2)
 	{
@@ -36,19 +38,50 @@ public class ArrayMethods2 extends HelperMethods{
 				newArr[x+1] = list2[j];
 				i++;
 				j++;
-				x = x + 2;
+				x+=2;
 			}
 		}
-		/*
-		for(int z = 0; z < newArr.length; z++)
+		if( i < list1.length)
 		{
-			if(newArr[z]==null)
+			for( int k = i;k < list1.length;k++)
 			{
-				newArr[z]=list2[j];
+				newArr[x] = list1[k];
+				x++;
 			}
 		}
-		*/
+		if( j < list2.length)
+		{
+			for( int k = j;k < list2.length;k++)
+			{
+				newArr[x] = list2[k];
+				x++;
+			}
+		}
 		return newArr;
+	}
+	public static String [] mergeSort(String [] list)
+	{
+		if(list.length == 1)
+		{
+			return list;
+		}
+		else
+		{
+			String[]a1 = Arrays.copyOfRange(list, 0, list.length/2);
+			String[]a2 = Arrays.copyOfRange(list, list.length/2, list.length);
+			a1 = mergeSort(a1);
+			a2 = mergeSort(a2);
+			return merge(a1, a2);
+		}
+	}
+	public static int partition(int[]list)
+	{
+		int n = 0;
+		for(int i = 1; i<list.length; i++)
+		{
+			
+		}
+		return n;
 	}
 	
 }
