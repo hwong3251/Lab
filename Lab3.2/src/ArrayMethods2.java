@@ -3,14 +3,18 @@ import java.util.Arrays;
 public class ArrayMethods2 extends HelperMethods{
 	public static void main(String[]args)
 	{
-		String[]L1 = {"aa","apple","cc","fetch"};
-		String[]L2 = {"bb","bee","dog","frisbee"};
+		String[]L1 = {"apple","fetch"};
+		String[]L2 = {"bee","dog","frisbee"};
 		String[]test = merge(L1, L2);
 		printArray(test);
 		
-		String[]L = {"a","z","d","b","e","c"};
+		String[]L = {"a","f","d","b","e","c"};
 		String[]test2 = mergeSort(L);
 		printArray(test2);
+		
+		int[]L3 = {4,1,2,5,7,6,3};
+		int test3 = partition(L3);
+		System.out.println(test3);
 	}
 	public static String[]merge(String[]list1, String[]list2)
 	{
@@ -76,12 +80,18 @@ public class ArrayMethods2 extends HelperMethods{
 	}
 	public static int partition(int[]list)
 	{
-		int n = 0;
-		for(int i = 1; i<list.length; i++)
+		int temp = list[0];
+		int count = 0;
+		int  [] newArr = new int[list.length];
+		for(int i = 1; i < list.length; i++)
 		{
-			
+			if(temp > list[i] )
+			{
+				newArr[count] = list[i];
+				count++;
+			}
 		}
-		return n;
+		return count;
 	}
 	
 }

@@ -86,4 +86,10 @@ public abstract class HelperMethods {
 		arr[i] = arr[j];
 		arr[j] = n;
 	}
+	public static void swap(int[]arr,int i,int j)
+	{
+		int n = arr[i];
+		arr[i] = arr[j];
+		arr[j] = n;
+	}
 }
