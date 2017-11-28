@@ -46,13 +46,20 @@ public abstract class HelperMethods {
 		}
 		return count;
 	}
-	public static void printArray(int[] test1)
+	public static void printArray(int[] test2)
 	{   
-	    for(int i = 0; i < test1.length; i++)
+	    for(int i = 0; i < test2.length; i++)
 	    {
-	        System.out.print("["+test1[i]+"]");
+	        System.out.print("["+test2[i]+"]");
 	    }
 	    System.out.print("\n");
+	}
+	public static void printArray(double[] test3) {
+		for(int i = 0; i < test3.length; i++)
+		{
+		    System.out.print("["+test3[i]+"]");
+		}
+		System.out.print("\n");
 	}
 	public static void printArray(String[] test1)
 	{   

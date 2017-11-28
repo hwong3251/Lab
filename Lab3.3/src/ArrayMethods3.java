@@ -2,9 +2,17 @@
 public class ArrayMethods3 extends HelperMethods{
 	public static void main(String[]args)
 	{
-		String[]test1 = {"apple","banana","a","cat","zebra","leon"};
+		String[]test1 = {"ab","b","a","bc","c","cd"};
+		int[] test2 = {1,3,2,4,6,5};
+		double[] test3 = {1.1,1.2,2.1,2.2,3.1,3.2};
+		
 		bubbleSort(test1);
+		insertionSort(test2);
+		selectionSort(test3);
+		
 		printArray(test1);
+		printArray(test2);
+		printArray(test3);
 	}
 	public static void insertionSort(int[]list1)
 	{
@@ -23,6 +31,17 @@ public class ArrayMethods3 extends HelperMethods{
 	}
 	public static void selectionSort(double[]list1)
 	{
+		double lowest = list1[0];
+		for(int i = 0;i<list1.length;i++)
+		{
+			for(int j = i+1;j<list1.length;j++)
+			{
+				if (list1[j]<lowest)
+				{
+					lowest = list1[j];
+				}
+			}
+		}
 		
 	}
 	public static void bubbleSort(String[]list1)
