@@ -2,47 +2,52 @@
 public class ArrayMethods3 extends HelperMethods{
 	public static void main(String[]args)
 	{
-		String[]test1 = {"ab","b","a","bc","c","cd"};
-		int[] test2 = {1,3,2,4,6,5};
-		double[] test3 = {1.1,1.2,2.1,2.2,3.1,3.2};
+		int[] test1 = {1,3,2,4,6,5};
+		double[] test2 = {1.2, 1.4, 1.0, 2.2, 8.1, 0.2};
+		String[]test3 = {"ab","b","a","bc","c","cd"};
 		
-		bubbleSort(test1);
-		insertionSort(test2);
-		selectionSort(test3);
+		insertionSort(test1);
+		selectionSort(test2);
+		bubbleSort(test3);
 		
+		System.out.println("insertionSort");
 		printArray(test1);
+		System.out.println("selectionSort");
 		printArray(test2);
+		System.out.println("bubbleSort");
 		printArray(test3);
+		
 	}
 	public static void insertionSort(int[]list1)
 	{
-		int n = 1;
-		while(n < list1.length)
+		for ( int i = 0; i < list1.length; i++)
 		{
-			for(int i = 0; i < n; i++)
+			for ( int j=i; j> 0; j--)
 			{
-				if(list1[n]<list1[i])
+				if(list1[j] < list1[j-1])
 				{
-					swap(list1,n,i);
+					swap(list1,j,j-1);
 				}
 			}
-			n++;
 		}
 	}
 	public static void selectionSort(double[]list1)
 	{
-		double lowest = list1[0];
-		for(int i = 0;i<list1.length;i++)
+		double min;
+		int index = 0;
+		for ( int j = 0; j < list1.length; j++)
 		{
-			for(int j = i+1;j<list1.length;j++)
+			min = list1[j];
+			for ( int i=j; i < list1.length; i++)
 			{
-				if (list1[j]<lowest)
+				if(list1[i] < min)
 				{
-					lowest = list1[j];
+					min = list1[i];
+					index = i;
 				}
 			}
+			swap(list1,index,j);
 		}
-		
 	}
 	public static void bubbleSort(String[]list1)
 	{
