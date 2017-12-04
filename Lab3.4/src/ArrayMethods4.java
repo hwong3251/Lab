@@ -1,16 +1,32 @@
 
-public class ArrayMethods4 {
+public class ArrayMethods4 extends HelperMethods {
 	public static void main(String[]args)
 	{
 		int[]test1 = {1,12,5,26,7,14,3,7,2};
-		int t = partition(test1,0,test1.length);
+		test1 = partition(test1,0,test1.length-1);
 		System.out.println(t);
 	}
-	public static int partition(int[]list1, int front, int back)
+	public static int partition(int[]list,int front,int back)
 	{
-		int pivot = back/2;
-		while(front)
-		return pivot;
+		int i = 0;
+		int j = i;
+		int pivotPos = 0;
+		int pivot = list[front];
+		while( i < list.length)
+		{
+			while(list[i] <= pivot && i < pivot)
+			{
+				i++;
+			}
+			while( list[j] > pivot && i < back)
+			{
+				j++;
+			}
+			swap(list,i,j);
+			pivotPos = i;
+		}
+		swap(list,pivotPos,0);
+		return pivotPos;
 	}
 	public static void quickSort(int[]list1, int front, int back)
 	{
