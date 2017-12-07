@@ -46,7 +46,7 @@ public abstract class HelperMethods {
 		}
 		return count;
 	}
-	public static void printArray(int[] test2)
+	public static void printArrayInt(int[] test2)
 	{   
 	    for(int i = 0; i < test2.length; i++)
 	    {
